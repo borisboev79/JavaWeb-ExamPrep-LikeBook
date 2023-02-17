@@ -1,8 +1,8 @@
 package spring.exam.repositories;
 
-import examprep.shoppinglist.domain.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import spring.exam.domain.entities.User;
 
 import java.util.Optional;
 

@@ -1,11 +1,11 @@
 package spring.exam.domain.models.binding;
 
-import examprep.shoppinglist.validations.checkUserExistence.ValidateUserExistence;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import spring.exam.validations.checkUserExistence.ValidateUserExistence;
 
 @Getter
 @Setter

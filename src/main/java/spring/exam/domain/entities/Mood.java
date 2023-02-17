@@ -1,8 +1,8 @@
 package spring.exam.domain.entities;
 
-import examprep.shoppinglist.domain.enums.CategoryType;
 import jakarta.persistence.*;
 import lombok.*;
+import spring.exam.domain.enums.MoodType;
 
 @Getter
 @Setter
@@ -10,13 +10,13 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name="categories")
-public class Category extends BaseEntity{
+@Table(name="moods")
+public class Mood extends BaseEntity{
 
     @Enumerated(EnumType.STRING)
-    private CategoryType name;
+    private MoodType name;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
+    @Column(columnDefinition = "TEXT")
     private String description;
 
 }

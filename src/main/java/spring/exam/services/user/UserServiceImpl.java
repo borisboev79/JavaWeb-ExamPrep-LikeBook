@@ -1,9 +1,9 @@
 package spring.exam.services.user;
 
-import examprep.shoppinglist.domain.entities.User;
-import examprep.shoppinglist.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import spring.exam.domain.entities.User;
+import spring.exam.repositories.UserRepository;
 
 import java.util.Optional;
 

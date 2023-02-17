@@ -1,8 +1,8 @@
 package spring.exam.validations.passwordMatcher;
 
-import examprep.shoppinglist.domain.models.binding.UserRegisterModel;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
+import spring.exam.domain.models.binding.UserRegisterModel;
 
 public class PasswordMatcher implements ConstraintValidator<PasswordMatch, UserRegisterModel> {
     @Override

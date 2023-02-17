@@ -1,6 +1,5 @@
 package spring.exam.domain.models.binding;
 
-import examprep.shoppinglist.validations.passwordMatcher.PasswordMatch;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -8,6 +7,7 @@ import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import spring.exam.validations.passwordMatcher.PasswordMatch;
 
 @Getter
 @Setter

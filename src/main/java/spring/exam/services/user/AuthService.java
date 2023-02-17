@@ -1,7 +1,7 @@
 package spring.exam.services.user;
 
-import examprep.shoppinglist.domain.models.binding.UserLoginModel;
-import examprep.shoppinglist.domain.models.binding.UserRegisterModel;
+import spring.exam.domain.models.binding.UserLoginModel;
+import spring.exam.domain.models.binding.UserRegisterModel;
 
 public interface AuthService {
 

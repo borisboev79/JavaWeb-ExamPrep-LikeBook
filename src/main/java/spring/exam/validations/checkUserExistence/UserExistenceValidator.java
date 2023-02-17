@@ -1,12 +1,12 @@
 package spring.exam.validations.checkUserExistence;
 
-import examprep.shoppinglist.domain.entities.User;
-import examprep.shoppinglist.domain.models.binding.UserLoginModel;
-import examprep.shoppinglist.services.user.UserService;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import spring.exam.domain.entities.User;
+import spring.exam.domain.models.binding.UserLoginModel;
+import spring.exam.services.user.UserService;
 
 import java.util.Optional;
 

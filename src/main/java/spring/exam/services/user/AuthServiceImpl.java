@@ -1,14 +1,14 @@
 package spring.exam.services.user;
 
 
-import examprep.shoppinglist.domain.entities.User;
-import examprep.shoppinglist.domain.helpers.LoggedUser;
-import examprep.shoppinglist.domain.models.binding.UserLoginModel;
-import examprep.shoppinglist.domain.models.binding.UserRegisterModel;
-import examprep.shoppinglist.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import spring.exam.domain.entities.User;
+import spring.exam.domain.helpers.LoggedUser;
+import spring.exam.domain.models.binding.UserLoginModel;
+import spring.exam.domain.models.binding.UserRegisterModel;
+import spring.exam.repositories.UserRepository;
 
 @Service
 public class AuthServiceImpl implements AuthService{

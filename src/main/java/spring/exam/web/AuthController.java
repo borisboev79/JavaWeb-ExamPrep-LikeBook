@@ -1,8 +1,5 @@
 package spring.exam.web;
 
-import examprep.shoppinglist.domain.models.binding.UserLoginModel;
-import examprep.shoppinglist.domain.models.binding.UserRegisterModel;
-import examprep.shoppinglist.services.user.AuthService;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -11,6 +8,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import spring.exam.domain.models.binding.UserLoginModel;
+import spring.exam.domain.models.binding.UserRegisterModel;
+import spring.exam.services.user.AuthService;
 
 @Controller
 @RequestMapping("/auth")
