@@ -7,19 +7,22 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import spring.exam.domain.helpers.LoggedUser;
+import spring.exam.domain.models.PostViewModel;
 import spring.exam.services.post.PostService;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/")
 public class HomeController {
     private final LoggedUser loggedUser;
-    private final PostService productService;
+    private final PostService postService;
 
 
     @Autowired
-    public HomeController(LoggedUser loggedUser, PostService productService) {
+    public HomeController(LoggedUser loggedUser, PostService postService) {
         this.loggedUser = loggedUser;
-        this.productService = productService;
+        this.postService = postService;
     }
 
     @GetMapping
@@ -30,33 +33,28 @@ public class HomeController {
     @GetMapping("/home")
     public ModelAndView getHome(ModelAndView model) {
 
-       /* List<List<PostViewModel>> products = this.productService.getAllProductsByCategory();
-
-        BigDecimal totalPrice = products.stream().map(
-                list -> list.stream()
-                        .map(PostViewModel::getPrice)
-                        .reduce(BigDecimal.ZERO, BigDecimal::add)
-        ).reduce(BigDecimal.ZERO, BigDecimal::add);
+        List<PostViewModel> posts = this.postService.getAllLoggedUserPosts();
+        List<PostViewModel> otherPosts = this.postService.getAllNonLoggedUserPosts();
 
         model.setViewName("home");
-        model.addObject("products", products);
-        model.addObject("price", totalPrice);
+        model.addObject("posts", posts);
+        model.addObject("otherPosts", otherPosts);
         model.addObject("loggedUserId", this.loggedUser.getId());
-*/
         return model;
     }
 
-    @GetMapping("/buy/{id}")
+    @GetMapping("/like/{id}")
+    public String likePost(@PathVariable Long id){
+
+        this.postService.likePost(id);
+
+        return "redirect:/home";
+    }
+    @GetMapping("/remove/{id}")
     public String buyProduct(@PathVariable Long id){
-        this.productService.deletePostById(id);
+        this.postService.deletePostById(id);
 
         return "redirect:/home";
     }
 
-    @GetMapping("/buy/all/{id}")
-    public String buyAllProducts(@PathVariable Long id){
-        this.productService.deleteAllPostsByUser(id);
-
-        return "redirect:/home";
-    }
 }

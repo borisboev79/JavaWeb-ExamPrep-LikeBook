@@ -12,7 +12,10 @@ public interface PostService {
 
     List<PostViewModel> getPostsBySingleMood(MoodType moodType);
 
-    List<List<PostViewModel>> getAllPostsByMood();
+    List<PostViewModel> getAllLoggedUserPosts();
+    List<PostViewModel> getAllNonLoggedUserPosts();
+
+    void likePost(Long id);
 
     void deletePostById(Long id);
 

@@ -13,29 +13,29 @@ import spring.exam.domain.models.PostAddModel;
 import spring.exam.services.post.PostService;
 
 @Controller
-@RequestMapping("/products")
-public class ProductController {
+@RequestMapping("/posts")
+public class PostController {
     private final PostService postService;
 
     @Autowired
-    public ProductController(PostService postService) {
+    public PostController(PostService postService) {
         this.postService = postService;
     }
 
     @GetMapping("/add")
     public String getAddProduct() {
-        return "product-add";
+        return "post-add";
     }
 
     @PostMapping("/add")
-    public String addProduct(@Valid @ModelAttribute(name = "productAddModel") PostAddModel postAddModel,
+    public String addProduct(@Valid @ModelAttribute(name = "postAddModel") PostAddModel postAddModel,
                              BindingResult bindingResult,
                              RedirectAttributes redirectAttributes) {
 
         if (bindingResult.hasErrors()) {
             redirectAttributes
-                    .addFlashAttribute("productAddModel", postAddModel)
-                    .addFlashAttribute("org.springframework.validation.BindingResult.productAddModel", bindingResult);
+                    .addFlashAttribute("postAddModel", postAddModel)
+                    .addFlashAttribute("org.springframework.validation.BindingResult.postAddModel", bindingResult);
 
             return "redirect:add";
         }
@@ -44,8 +44,8 @@ public class ProductController {
         return "redirect:/home";
     }
 
-    @ModelAttribute(name = "productAddModel")
-    public PostAddModel productAddModel() {
+    @ModelAttribute(name = "postAddModel")
+    public PostAddModel postAddModel() {
         return new PostAddModel();
     }
 }

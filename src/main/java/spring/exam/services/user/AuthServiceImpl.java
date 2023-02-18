@@ -10,6 +10,8 @@ import spring.exam.domain.models.binding.UserLoginModel;
 import spring.exam.domain.models.binding.UserRegisterModel;
 import spring.exam.repositories.UserRepository;
 
+import java.util.ArrayList;
+
 @Service
 public class AuthServiceImpl implements AuthService{
     private final UserRepository userRepository;
@@ -29,6 +31,7 @@ public class AuthServiceImpl implements AuthService{
                 .username(userRegisterModel.getUsername())
                 .password(encoder.encode(userRegisterModel.getPassword()))
                 .email(userRegisterModel.getEmail())
+                .likedPosts(new ArrayList<>())
                 .build());
     }
 

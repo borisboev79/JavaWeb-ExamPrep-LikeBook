@@ -30,9 +30,6 @@ public class Post extends BaseEntity {
     private User user;
 
     @ManyToMany
-    @JoinTable(name = "users",
-            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "post_id", referencedColumnName = "id"))
     @Fetch(FetchMode.JOIN)
     private List<User> userLikes;
 }

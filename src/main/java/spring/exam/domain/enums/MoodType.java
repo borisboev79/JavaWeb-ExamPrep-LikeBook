@@ -5,8 +5,9 @@ import lombok.Getter;
 @Getter
 public enum MoodType {
     HAPPY("Happy"),
-    SAD("Sad"),
-    INSPIRED("Inspired");
+    INSPIRED("Inspired"),
+    SAD("Sad");
+
 
    public final String label;
 

@@ -18,10 +18,6 @@ public class PostAddModel {
     @NotEmpty
     private String content;
 
-    @PositiveOrZero
-    @NotNull
-    private Integer userLikes;
-
     @NotNull
     private MoodType mood;
 }

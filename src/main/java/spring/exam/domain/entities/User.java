@@ -27,5 +27,5 @@ public class User extends BaseEntity {
     private String email;
 
     @ManyToMany(mappedBy = "userLikes", targetEntity = Post.class)
-    private List<Post> posts;
+    private List<Post> likedPosts;
 }
